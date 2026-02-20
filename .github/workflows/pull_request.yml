@@ -7,7 +7,6 @@ permissions:
 
 jobs:
   lint:
-    if: github.repository == 'ml-explore/mlx-swift-lm'
     runs-on: ubuntu-22.04
     container:
       image: swift:6.2-rhel-ubi9
@@ -71,7 +70,6 @@ jobs:
 
   linux_build:
     needs: lint
-    if: github.repository == 'ml-explore/mlx-swift-lm'
     runs-on: ubuntu-24.04
     container:
       image: swift:6.2.3-noble
@@ -85,7 +83,6 @@ jobs:
 
   mac_build_and_test:
     needs: lint
-    if: github.repository == 'ml-explore/mlx-swift-lm'
     runs-on: [self-hosted, macos]
     steps:
       - uses: actions/checkout@v6
